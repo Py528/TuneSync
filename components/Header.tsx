@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -6,15 +6,19 @@ import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { HiHome } from 'react-icons/hi';
 import { BiSearch } from 'react-icons/bi';
 import Button from './Button';
+
 interface HeaderProps {
 	children: React.ReactNode;
 	className?: string;
 }
-const Header: React.FC<HeaderProps> = (children, className) => {
+
+const Header: React.FC<HeaderProps> = ({ children, className }) => {
 	const router = useRouter();
+
 	const handleLogout = () => {
-		//handle logout logic
+		// handle logout logic
 	};
+
 	return (
 		<div className={twMerge('h-fit bg-gradient-to-b from-emerald-800 p-6', className)}>
 			<div className="w-full mb-4 flex justify-between items-center">
@@ -73,6 +77,7 @@ const Header: React.FC<HeaderProps> = (children, className) => {
 					</>
 				</div>
 			</div>
+			{children}
 		</div>
 	);
 };
